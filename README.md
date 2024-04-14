@@ -79,6 +79,23 @@ soup_element.find_all("...")
 
 **Note:** On this example, we used only `find` and `find_all` commands. However, it is also possible to use other commands to extract same data such `select` ...etc. For more details, read the documentation of `BeautifulSoup` library
 
+### Scraping Protected Web Sites
+In this part, we will review how to scrape protected websites (which differentiate between normal browsers and scraping scripts)
+
+Several items will be covered, such: HTTP headers, JavaScript, Headless browsing, IP/Proxies and other professional scraping solutions
+
+#### HTTP HEADERS
+Usually the web servers can identify the client by analyzing its request, within the header, the `user-agent` will tell the server if the request is coming from a browser or from script. Based on this `user-agent`, the server will response or not
+
+To over-pass this protection, we will modify the headers within the code, and therefore, the server will not differentiate between our script and normal browser
+
+In our original code, we have to add then the headers dictionary. The values can be copied directly from your browser, and we pass the request with headers argument
+
+```python
+headers = { "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" }
+response = requests.get(url, headers=headers)
+```
+
 ## Links
 - [Cooking recipe web site](https://codeavecjonathan.com/scraping/recette/)
 - [ScrapeThisSite.com](https://www.scrapethissite.com/pages/)
