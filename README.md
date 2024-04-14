@@ -96,6 +96,11 @@ headers = { "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:120.0) Gecko/20100
 response = requests.get(url, headers=headers)
 ```
 
+#### JAVASCRIPT RESPONSE
+Some servers, response by a JavaScript code which executed by the browser to generate the content or to generate new request to the server to get the content. However, in case of scraping script, we can not obtain the content if we do not execute the JS code even if the server response code is `200`
+
+In this case, libraries like [selenium](https://selenium-python.readthedocs.io/) can be used. The idea consist of opening the website with a browser, save the source code to a local machine and finally perform the data scraping manipulations using `BeautifulSoup`
+
 ## Links
 - [Cooking recipe web site](https://codeavecjonathan.com/scraping/recette/)
 - [ScrapeThisSite.com](https://www.scrapethissite.com/pages/)
